@@ -32,7 +32,7 @@ jobs:
             ${{ runner.os }}-node-
 
       - name: Install forge libraries
-        run: make install
+        run: forge install
 
       - name: Install node_modules
         run: npm ci
@@ -68,7 +68,7 @@ jobs:
             ${{ runner.os }}-node-
 
       - name: Install forge libraries
-        run: make install
+        run: forge install
 
       - name: Install node_modules
         run: npm ci
