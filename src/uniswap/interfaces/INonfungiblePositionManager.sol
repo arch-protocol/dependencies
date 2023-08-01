@@ -1,8 +1,8 @@
 // SPDX-License-Identifier: GPL-2.0-or-later
 pragma solidity ^0.8.17;
 
-import {IERC721Permit} from "./IERC721Permit.sol";
-import {IPeripheryImmutableState} from "./IPeripheryImmutableState.sol";
+import { IERC721Permit } from "./IERC721Permit.sol";
+import { IPeripheryImmutableState } from "./IPeripheryImmutableState.sol";
 
 /// @title Non-fungible token for positions
 /// @notice Wraps Uniswap V3 positions in a non-fungible token interface which allows for them to
@@ -61,7 +61,10 @@ interface INonfungiblePositionManager is IPeripheryImmutableState, IERC721Permit
         payable
         returns (uint256 amount0, uint256 amount1);
 
-    function collect(CollectParams calldata params) external payable returns (uint256 amount0, uint256 amount1);
+    function collect(CollectParams calldata params)
+        external
+        payable
+        returns (uint256 amount0, uint256 amount1);
 
     function burn(uint256 tokenId) external payable;
 
