@@ -1,0 +1,19 @@
+{
+  "name": "dependencies",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "scripts": {
+    "lint": "solhint -f table src/**/*.sol"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "solhint": "^3.4.1",
+    "solhint-plugin-prettier": "^0.0.5"
+  }
+}
