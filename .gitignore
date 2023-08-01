@@ -14,4 +14,3 @@ out-svg
 *.log
 .DS_Store
 .pnp.*
-package-lock.json
