@@ -37,9 +37,19 @@ library PoolAddress {
         returns (address pool)
     {
         require(key.token0 < key.token1);
-        bytes32 _salt = keccak256(abi.encodePacked(key.token0, key.token1, key.fee));
-        bytes32 hash =
-            keccak256(abi.encodePacked(bytes1(0xff), address(factory), _salt, POOL_INIT_CODE_HASH));
-        pool = address(uint160(uint256(hash)));
+        pool = address(
+            uint160(
+                uint256(
+                    keccak256(
+                        abi.encodePacked(
+                            hex"ff",
+                            factory,
+                            keccak256(abi.encode(key.token0, key.token1, key.fee)),
+                            POOL_INIT_CODE_HASH
+                        )
+                    )
+                )
+            )
+        );
     }
 }
